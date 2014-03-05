@@ -6,8 +6,8 @@
 USEFORM("UMain.cpp", frmMain);
 USEFORM("UImageView.cpp", frmImageView);
 USEFORM("UReport.cpp", frmReport);
-USEFORM("UCargarImagenes.cpp", frmCargarImagenes);
 USEFORM("UAbout.cpp", frmAbout);
+USEFORM("UCargarImagenes.cpp", frmCargarImagenes);
 USEFORM("UHelp.cpp", frmHelp);
 USEFORM("UPresentation.cpp", frmPresentation);
 //---------------------------------------------------------------------------
@@ -16,7 +16,7 @@ WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
         try
         {
                  Application->Initialize();
-                 Application->Title = "Canopy Cover";
+                 Application->Title = "CIPLAI";
                  Application->CreateForm(__classid(TfrmMain), &frmMain);
                  Application->Run();
         }

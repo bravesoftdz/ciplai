@@ -1,42 +1,42 @@
 object frmReport: TfrmReport
-  Left = 489
-  Top = 261
+  Left = 513
+  Top = 154
   BorderIcons = []
   BorderStyle = bsSingle
   Caption = 'Report'
-  ClientHeight = 311
-  ClientWidth = 769
+  ClientHeight = 383
+  ClientWidth = 946
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -11
+  Font.Height = -14
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   FormStyle = fsStayOnTop
   OldCreateOrder = False
   Visible = True
   OnClose = FormClose
-  PixelsPerInch = 96
-  TextHeight = 13
+  PixelsPerInch = 120
+  TextHeight = 16
   object lblWorking: TLabel
-    Left = 8
-    Top = 272
-    Width = 166
-    Height = 13
+    Left = 10
+    Top = 335
+    Width = 198
+    Height = 16
     Caption = 'Wait, application is working !'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = 14090240
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
     Visible = False
   end
   object sbReport: TSpeedButton
-    Left = 674
-    Top = 267
-    Width = 38
-    Height = 38
+    Left = 830
+    Top = 329
+    Width = 46
+    Height = 46
     Hint = 'Save report'
     Glyph.Data = {
       360C0000424D360C000000000000360000002800000020000000200000000100
@@ -142,10 +142,10 @@ object frmReport: TfrmReport
     OnClick = sbReportClick
   end
   object sbExit: TSpeedButton
-    Left = 721
-    Top = 267
-    Width = 38
-    Height = 38
+    Left = 887
+    Top = 329
+    Width = 47
+    Height = 46
     Hint = 'Exit'
     Glyph.Data = {
       360C0000424D360C000000000000360000002800000020000000200000000100
@@ -251,10 +251,10 @@ object frmReport: TfrmReport
     OnClick = sbExitClick
   end
   object sbDelete: TSpeedButton
-    Left = 627
-    Top = 267
-    Width = 38
-    Height = 38
+    Left = 772
+    Top = 329
+    Width = 46
+    Height = 46
     Hint = 'Delete picture from list'
     Glyph.Data = {
       360C0000424D360C000000000000360000002800000020000000200000000100
@@ -360,13 +360,13 @@ object frmReport: TfrmReport
     OnClick = sbDeleteClick
   end
   object sgLista: TStringGrid
-    Left = 6
-    Top = 8
-    Width = 755
-    Height = 253
+    Left = 7
+    Top = 10
+    Width = 930
+    Height = 311
     BorderStyle = bsNone
     Color = clTeal
-    ColCount = 7
+    ColCount = 8
     DefaultRowHeight = 20
     FixedColor = 6184448
     FixedCols = 0
@@ -374,7 +374,7 @@ object frmReport: TfrmReport
     FixedRows = 2
     Font.Charset = DEFAULT_CHARSET
     Font.Color = 14803425
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goDrawFocusSelected, goColSizing, goRowSelect]
@@ -389,13 +389,14 @@ object frmReport: TfrmReport
       45
       45
       45
-      45)
+      45
+      64)
   end
   object pbPicture: TProgressBar
-    Left = 8
-    Top = 288
-    Width = 385
-    Height = 16
+    Left = 10
+    Top = 354
+    Width = 474
+    Height = 20
     Min = 0
     Max = 100
     Step = 1

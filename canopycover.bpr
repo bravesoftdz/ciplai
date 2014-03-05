@@ -4,12 +4,12 @@
   <MACROS>
     <VERSION value="BCB.06.00"/>
     <PROJECT value="canopycover.exe"/>
-    <OBJFILES value="canopycover.obj UMain.obj UImageView.obj UReport.obj UCargarImagenes.obj 
-      UAbout.obj UHelp.obj UPresentation.obj Picture.obj"/>
+    <OBJFILES value="canopycover.obj UMain.obj Picture.obj UImageView.obj UReport.obj 
+      UAbout.obj UCargarImagenes.obj UHelp.obj UPresentation.obj"/>
     <RESFILES value="canopycover.res"/>
     <DEFFILE value=""/>
-    <RESDEPEN value="$(RESFILES) UMain.dfm UImageView.dfm UReport.dfm UCargarImagenes.dfm 
-      UAbout.dfm UHelp.dfm UPresentation.dfm"/>
+    <RESDEPEN value="$(RESFILES) UMain.dfm UImageView.dfm UReport.dfm UAbout.dfm 
+      UCargarImagenes.dfm UHelp.dfm UPresentation.dfm"/>
     <LIBFILES value=""/>
     <LIBRARIES value="vclx.lib rtl.lib vcl.lib"/>
     <SPARELIBS value="vcl.lib rtl.lib vclx.lib"/>
@@ -19,7 +19,7 @@
       inetdbxpress.bpi inetdb.bpi nmfast.bpi bcbie.bpi soaprtl.bpi dclocx.bpi 
       dbexpress.bpi dbxcds.bpi indy.bpi bcb2kaxserver.bpi TeeDB7C6.bpi 
       Tee7C6.bpi TeeUI7C6.bpi TeeLanguage7C6.bpi TeePro7C6.bpi TeeGL7C6.bpi 
-      TeeQR7C6.bpi TeeImage7C6.bpi"/>
+      TeeQR7C6.bpi TeeImage7C6.bpi Package1.bpi"/>
     <PATHCPP value=".;"/>
     <PATHPAS value=".;"/>
     <PATHRC value=".;"/>
@@ -27,21 +27,20 @@
     <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
     <RELEASELIBPATH value="$(BCB)\lib\release"/>
     <LINKER value="ilink32"/>
-    <USERDEFINES value="_DEBUG"/>
+    <USERDEFINES value=""/>
     <SYSDEFINES value="_RTLDLL;NO_STRICT"/>
     <MAINSOURCE value="canopycover.cpp"/>
-    <INCLUDEPATH value="&quot;C:\Program Files\Borland\CBuilder6\Projects&quot;;D:\TrabajoCIP\ProjCIPLAI;$(BCB)\include;$(BCB)\include\vcl"/>
-    <LIBPATH value="&quot;C:\Program Files\Steema Software\TeeChart 705 for Builder 6\Builder6\Lib&quot;;&quot;C:\Program Files\Borland\CBuilder6\Projects&quot;;D:\TrabajoCIP\ProjCIP-VC;$(BCB)\lib\obj;$(BCB)\lib"/>
+    <INCLUDEPATH value="&quot;C:\Program Files (x86)\Borland\CBuilder6\Projects&quot;;D:\TrabajoCIP\ProjCIPLAI;$(BCB)\include;$(BCB)\include\vcl"/>
+    <LIBPATH value="$(BCB)\Projects\Lib;&quot;C:\Program Files (x86)\Steema Software\TeeChart 705 for Builder 6\Builder6\Lib&quot;;&quot;C:\Program Files (x86)\Borland\CBuilder6\Projects&quot;;D:\TrabajoCIP\ProjCIPLAI;$(BCB)\lib\obj;$(BCB)\lib"/>
     <WARNINGS value="-w-par"/>
     <OTHERFILES value=""/>
   </MACROS>
   <OPTIONS>
-    <CFLAG1 value="-Od -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -r- -a8 -b- -k -y -v -vi- -c 
-      -tW -tWM"/>
-    <PFLAGS value="-$Y+ -$W -$O- -$A8 -v -JPHNE -M"/>
+    <CFLAG1 value="-O2 -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -a8 -b- -k- -vi -c -tW -tWM"/>
+    <PFLAGS value="-$Y- -$L- -$D- -$A8 -v -JPHNE -M"/>
     <RFLAGS value=""/>
-    <AFLAGS value="/mx /w2 /zi"/>
-    <LFLAGS value="-D&quot;&quot; -aa -Tpe -x -Gn -v"/>
+    <AFLAGS value="/mx /w2 /zn"/>
+    <LFLAGS value="-D&quot;&quot; -aa -Tpe -x -Gn"/>
     <OTHERFILES value=""/>
   </OPTIONS>
   <LINKER>
@@ -54,13 +53,13 @@
       <FILE FILENAME="canopycover.res" FORMNAME="" UNITNAME="canopycover.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="canopycover.cpp" FORMNAME="" UNITNAME="canopycover" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="UMain.cpp" FORMNAME="frmMain" UNITNAME="UMain" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Picture.cpp" FORMNAME="" UNITNAME="Picture" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="UImageView.cpp" FORMNAME="frmImageView" UNITNAME="UImageView" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="UReport.cpp" FORMNAME="frmReport" UNITNAME="UReport" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="UCargarImagenes.cpp" FORMNAME="frmCargarImagenes" UNITNAME="UCargarImagenes" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="UAbout.cpp" FORMNAME="frmAbout" UNITNAME="UAbout" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UCargarImagenes.cpp" FORMNAME="frmCargarImagenes" UNITNAME="UCargarImagenes" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="UHelp.cpp" FORMNAME="frmHelp" UNITNAME="UHelp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="UPresentation.cpp" FORMNAME="frmPresentation" UNITNAME="UPresentation" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="Picture.cpp" FORMNAME="" UNITNAME="Picture" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
   </FILELIST>
   <BUILDTOOLS>
   </BUILDTOOLS>
@@ -92,24 +91,6 @@ OriginalFilename=
 ProductName=
 ProductVersion=1.0.0.0
 Comments=
-
-[HistoryLists\hlIncludePath]
-Count=2
-Item0=C:\Program Files\Borland\CBuilder6\Projects;D:\TrabajoCIP\ProjCIPLAI;$(BCB)\include;$(BCB)\include\vcl
-Item1=C:\Program Files\Borland\CBuilder6\Projects;D:\TrabajoCIP\ProjCIP-VC;$(BCB)\include;$(BCB)\include\vcl
-
-[HistoryLists\hlLibraryPath]
-Count=2
-Item0=C:\Program Files\Steema Software\TeeChart 705 for Builder 6\Builder6\Lib;C:\Program Files\Borland\CBuilder6\Projects;D:\TrabajoCIP\ProjCIP-VC;$(BCB)\lib\obj;$(BCB)\lib
-Item1=C:\Program Files\Steema Software\TeeChart 705 for Builder 6\Builder6\Lib;C:\Program Files\Borland\CBuilder6\Projects;D:\TrabajoCIP\ProjCIPLAI;..\..\..\Steema Software\TeeChart 705 for Builder 6\Builder6\Lib;$(BCB)\lib\obj;$(BCB)\lib
-
-[HistoryLists\hlDebugSourcePath]
-Count=1
-Item0=$(BCB)\source\vcl
-
-[HistoryLists\hlConditionals]
-Count=1
-Item0=_DEBUG
 
 [Debugging]
 DebugSourceDirs=$(BCB)\source\vcl

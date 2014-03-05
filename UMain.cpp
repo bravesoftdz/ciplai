@@ -2,13 +2,12 @@
 #include <FileCtrl.hpp>
 #include <vcl.h>
 #pragma hdrstop
-#include <Picture.cpp>
+#include "Picture.cpp"
 #include "UMain.h"
 #include "UImageView.h"
 #include "UReport.h"
 #include "UCargarImagenes.h"
 #include "UAbout.h"
-#include "UForm1.h"
 #include "UHelp.h"
 #include "UPresentation.h"
 //---------------------------------------------------------------------------
@@ -44,7 +43,7 @@ __fastcall TfrmMain::TfrmMain(TComponent* Owner)
   picture=new Picture(0,0);
 
   frmImage= NULL;
-  frmImage= new TfrmImageView(frmMain);
+  frmImage= new TfrmImageView(this);
   frmImage->Show();
   frmImage->Top=100;
   frmImage->Left=30;
@@ -284,16 +283,105 @@ if(!processing)
   {
     picture->SaveOutput=false;
   }
+// validate size of rule en pixels
+  int sizeRulePx=0;
+  try
+  {
+    sizeRulePx=Edit2->Text.ToInt();
+    if(sizeRulePx<=0)
+    {
+      ShowMessage("Size of rule in pixels should be a number greater than 0!");
+      Edit2->SetFocus();
+      return;
+    }
+  }
+  catch(...)
+  {
+    ShowMessage("Size of rule in pixels should be a number greater than 0!");
+    Edit2->SetFocus();
+    return;
+  }
+// validate size of rule en centimetros
+  int sizeRuleCm=0;
+  try
+  {
+    sizeRuleCm=Edit3->Text.ToInt();
+    if(sizeRuleCm<=0)
+    {
+      ShowMessage("Size of rule in cm should be a number greater than 0!");
+      Edit3->SetFocus();
+      return;
+    }
+  }
+  catch(...)
+  {
+    ShowMessage("Size of rule in cm should be a number greater than 0!");
+    Edit3->SetFocus();
+    return;
+  }
+// validate plant distance
+  double plantDist=0;
+  try
+  {
+    plantDist=Edit4->Text.ToDouble();
+    if(plantDist<=0)
+    {
+      ShowMessage("Plant distance should be a number greater than 0!");
+      Edit4->SetFocus();
+      return;
+    }
+  }
+  catch(...)
+  {
+    ShowMessage("Plant distance should be a number greater than 0!");
+    Edit4->SetFocus();
+    return;
+  }
+// validate row distance
+  double rowDist=0;
+  try
+  {
+    rowDist=Edit5->Text.ToDouble();
+    if(rowDist<=0)
+    {
+      ShowMessage("Row distance should be a number greater than 0!");
+      Edit5->SetFocus();
+      return;
+    }
+  }
+  catch(...)
+  {
+    ShowMessage("Row distance should be a number greater than 0!");
+    Edit5->SetFocus();
+    return;
+  }
+// validate Number of plant per picture
+  int plantxPic=0;
+  try
+  {
+    plantxPic=Edit6->Text.ToDouble();
+    if(plantxPic<=0)
+    {
+      ShowMessage("Number of plant per picture should be a number greater than 0!");
+      Edit6->SetFocus();
+      return;
+    }
+  }
+  catch(...)
+  {
+    ShowMessage("Number of plant per picture should be a number greater than 0!");
+    Edit6->SetFocus();
+    return;
+  }
 // process
   frmRep->processed=false;
   frmRep->sgLista->Enabled=false;
   frmRep->lblWorking->Visible=true;
 // process
   processing=true;
-//  frmRep->CalculateAreaOfPictureTH();
   AnsiString FolderOutput;
   FolderOutput=edFolderOutput->Text;
-  frmRep->CalculateAreaOfPictureClassic(threshold,kindOpen,FolderOutput);
+  frmRep->CalculateAreaOfPictureClassic(threshold,kindOpen,FolderOutput,sizeRulePx,sizeRuleCm,plantDist,rowDist,plantxPic);
   HabilitarAplicacion();
 }
 }
@@ -353,6 +441,11 @@ void __fastcall TfrmMain::butFolderOutputClick(TObject *Sender)
         {
           edFolderOutput->Text=Directory;
         }
+}
+//---------------------------------------------------------------------------
+void TfrmMain::setEdit(int valor)
+{
+  Edit2->Text=valor;
 }
 //---------------------------------------------------------------------------
 

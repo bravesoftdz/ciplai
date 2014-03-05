@@ -4,10 +4,9 @@
 #include <cassert>
 #pragma hdrstop
 #include <Picture.cpp>
+#include "UMain.h"
 #include "UImageView.h"
 #include "UReport.h"
-#include <pila.h>
-#include <listas.h>
 #include <math.h>
 #include "UMain.h"
 //---------------------------------------------------------------------------
@@ -29,6 +28,7 @@ __fastcall TfrmReport::TfrmReport(TComponent* Owner)
   sgLista->ColWidths[4]=100;
   sgLista->ColWidths[5]=100;
   sgLista->ColWidths[6]=100;
+  sgLista->ColWidths[7]=100;
   sgLista->Cells[0][1]="No";
   sgLista->Cells[1][1]="Directory";
   sgLista->Cells[2][1]="Filename";
@@ -40,6 +40,8 @@ __fastcall TfrmReport::TfrmReport(TComponent* Owner)
   sgLista->Cells[5][1]="Number of Pixels";
   sgLista->Cells[6][0]="Canopy cover";
   sgLista->Cells[6][1]="%";
+  sgLista->Cells[7][0]="Area";
+  sgLista->Cells[7][1]="cm2";
   FixedRow=2;
   frmImage3=new TfrmImageView(this);
   frmImage3->Visible=false;
@@ -92,9 +94,9 @@ void TfrmReport::ShowRecords()
 void __fastcall TfrmReport::sgListaDrawCell(TObject *Sender, int ACol,
       int ARow, TRect &Rect, TGridDrawState State)
 {
-  if(ARow==0 || ARow==1 || ACol==0 || ACol==3 || ACol==4 || ACol==5 || ACol==6 || ACol==7)
+  if(ARow==0 || ARow==1 || ACol==0 || ACol==3 || ACol==4 || ACol==5 || ACol==6 || ACol==7 || ACol==8)
   {
-    if(ACol<8)
+    if(ACol<9)
     {
       TStringGrid* StringGrid =
       static_cast<TStringGrid*>(Sender);
@@ -127,6 +129,7 @@ void TfrmReport::Limpiar_sgLista()
     sgLista->Cells[4][i]="";
     sgLista->Cells[5][i]="";
     sgLista->Cells[6][i]="";
+    sgLista->Cells[7][i]="";
   }
   sgLista->RowCount=TotalRec;
   sgLista->Row=2;
@@ -222,7 +225,7 @@ void __fastcall TfrmReport::sbExitClick(TObject *Sender)
 this->Visible=false;
 }
 //---------------------------------------------------------------------------
-void TfrmReport::CalculateAreaOfPictureClassic(double threshold,int kindOpen,AnsiString FolderOutput)
+void TfrmReport::CalculateAreaOfPictureClassic(double threshold,int kindOpen,AnsiString FolderOutput,int rulepx,int rulecm,double plantDist,double rowDist,int plantxPic)
 {
   if(frmImage3->Visible) {frmImage3->Visible=false;frmImage3->Refresh();}
 
@@ -279,7 +282,7 @@ void TfrmReport::CalculateAreaOfPictureClassic(double threshold,int kindOpen,Ans
       TImage* img;
       img=NULL;
       img=new TImage(this);
-      proceso(archivoOrig,archivoBitmapTH,ArchivoResumen,0,picture->Width[iReg],0,picture->Height[iReg],iReg,threshold,img,kindOpen);
+      proceso(archivoOrig,archivoBitmapTH,ArchivoResumen,0,picture->Width[iReg],0,picture->Height[iReg],iReg,threshold,img,kindOpen,rulepx,rulecm,plantDist,rowDist,plantxPic);
       if(picture->SaveOutput)
       {
         img->Picture->SaveToFile(archivoBitmapTH);
@@ -293,6 +296,7 @@ void TfrmReport::CalculateAreaOfPictureClassic(double threshold,int kindOpen,Ans
       picture->Width[iReg]=0;
       picture->TotalPixel[iReg]=0;
       picture->LAI[iReg]=0.0;
+      picture->Area[iReg]=0.0;
       picture->TimeDuration[iReg]=0;
     }
 // mostrarInfo_en_sglista
@@ -302,6 +306,8 @@ void TfrmReport::CalculateAreaOfPictureClassic(double threshold,int kindOpen,Ans
     else sgLista->Cells[5][iReg+2]=FormatFloat("#,###",picture->TotalPixel[iReg]);
     if(picture->LAI[iReg]==0.0) sgLista->Cells[6][iReg+2]="0.00";
     else sgLista->Cells[6][iReg+2]=FormatFloat("#.##",picture->LAI[iReg]);
+    if(picture->Area[iReg]==0.0) sgLista->Cells[7][iReg+2]="0.00";
+    else sgLista->Cells[7][iReg+2]=FormatFloat("#.##",picture->Area[iReg]);
     sgLista->Refresh();
 // guardar imagen thresholding
 //  Image1->Picture->SaveToFile(archivoBitmapTH);
@@ -322,7 +328,7 @@ void TfrmReport::CalculateAreaOfPictureClassic(double threshold,int kindOpen,Ans
   msgFinal();
 }
 //---------------------------------------------------------------------------
-void TfrmReport::proceso(AnsiString archivoOrig,AnsiString archivo,AnsiString ArchRes,int Xini,int Xfin,int Yini,int Yfin,int reg,double threshold,TImage *img,int kindOpen)
+void TfrmReport::proceso(AnsiString archivoOrig,AnsiString archivo,AnsiString ArchRes,int Xini,int Xfin,int Yini,int Yfin,int reg,double threshold,TImage *img,int kindOpen,int rulepx,int rulecm,double plantDist,double rowDist,int plantxPic)
 {
 //  FILE *streamRes;
 //  streamRes = fopen (ArchRes.c_str(),"a");
@@ -359,17 +365,20 @@ void TfrmReport::proceso(AnsiString archivoOrig,AnsiString archivo,AnsiString Ar
       }
       else
       {
-        calc=double((green-red)+(green-blue))/double(green+red+green+blue);
+//        calc=double((green-red)+(green-blue))/double(green+red+green+blue);
+        calc=double(green-red)/double(green+red);
       }
 
       if(calc>=threshold)
       {
         contPixel++;
-        img->Canvas->Pixels[xpos][ypos]=pixel;
+//      img->Canvas->Pixels[xpos][ypos]=pixel;
+        img->Canvas->Pixels[xpos][ypos]=clGreen;
       }
       else
       {
-        img->Canvas->Pixels[xpos][ypos]=clWhite;
+//        img->Canvas->Pixels[xpos][ypos]=clWhite;
+        img->Canvas->Pixels[xpos][ypos]=clRed;
       }
     }
   }
@@ -386,16 +395,19 @@ void TfrmReport::proceso(AnsiString archivoOrig,AnsiString archivo,AnsiString Ar
   double coef=0.0000002*pow(altura,1.9525); // square medium 5x5
   double area=double(contPixel)*coef;
 */
-  double factor=0.013308565; // factor:bastidor entero
-  double areaCobertura=factor*double(contPixel);
-  double areaTotal=factor*double(((Xfin-Xini)*(Yfin-Yini)));
+//  double factor=0.013308565; // factor:bastidor entero
+//  double areaCobertura=factor*double(contPixel);
+//  double areaTotal=factor*double(((Xfin-Xini)*(Yfin-Yini)));
 //  double lai=(double(contPixel)/double(((Xfin-Xini)*(Yfin-Yini))))*100.00;
-  double lai=(areaCobertura/areaTotal)*100.00;
+//  double lai=(areaCobertura/areaTotal)*100.00;
 //  double area=0.01459854*double(contPixel); // celda 1 del bastidor
 //  fprintf(streamRes,"%i   %i    %i  %s    %s\n",xFinal,yFinal,contPixel,FormatFloat("0.00",float(lai)),archivoOrig.c_str());
 //  fclose(streamRes);
+  double area=(double(contPixel)*double(rulecm)*double(rulecm))/(double(rulepx)*double(rulepx));
+  double lai=(area/(double(plantxPic)*plantDist*rowDist))*100.00;
   picture->TotalPixel[reg]=contPixel;
   picture->LAI[reg]=lai;
+  picture->Area[reg]=area;
   frmImage->Visible=true;
 }
 
@@ -420,14 +432,14 @@ void TfrmReport::GuardarReporte()
     if(streamRes==NULL){fclose(streamRes);return;}
     else
     {
-      fprintf(streamRes,"%s\n",  "Image   Image      CC      CC");
-      fprintf(streamRes,"%s\n\n","Width   Height   Pixels     %       Filename");
+      fprintf(streamRes,"%s\n",  "Image   Image      CC      CC      Area");
+      fprintf(streamRes,"%s\n\n","Width   Height   Pixels     %       cm2       Filename");
     }
 
     int i;
     for(i=0;i<TotalArchivos;i++)
     {
-      fprintf(streamRes,"%i     %i      %i     %s    %s\n",picture->Width[i],picture->Height[i],picture->TotalPixel[i],FormatFloat("0.00",float(picture->LAI[i])),picture->FileName[i]);
+      fprintf(streamRes,"%i     %i      %i    %s   %s    %s\n",picture->Width[i],picture->Height[i],picture->TotalPixel[i],FormatFloat("0.00",float(picture->LAI[i])),FormatFloat("0.00",float(picture->Area[i])),picture->FileName[i]);
     }
     fclose(streamRes);
   }

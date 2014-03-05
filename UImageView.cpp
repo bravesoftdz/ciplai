@@ -4,21 +4,33 @@
 #include <vcl.h>
 #include <math.h>
 #pragma hdrstop
+#include "Picture.cpp"
+#include "UMain.h"
 #include "UImageView.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
 TfrmImageView *frmImageView;
+int x1,y1,x2,y2;
 //---------------------------------------------------------------------------
 __fastcall TfrmImageView::TfrmImageView(TComponent* Owner)
         : TForm(Owner)
 {
+
+}
+//---------------------------------------------------------------------------
+__fastcall TfrmImageView::TfrmImageView(TfrmMain* Owner)
+        : TForm(Owner)
+{
+  frmMain=Owner;
+  Image1->Canvas->Pen->Color= clRed;
 }
 //---------------------------------------------------------------------------
 __fastcall TfrmImageView::TfrmImageView(TComponent* Owner,TfrmRange* _frm)
         : TForm(Owner)
 {
   frm=_frm;
+  Image1->Canvas->Pen->Color= clRed;
 }
 //---------------------------------------------------------------------------
 bool TfrmImageView::CargarImagen(AnsiString ArchivoImagen,int cod)
@@ -46,9 +58,10 @@ bool TfrmImageView::CargarImagen(AnsiString ArchivoImagen,int cod)
 void __fastcall TfrmImageView::Image1MouseMove(TObject *Sender,
       TShiftState Shift, int X, int Y)
 {
+
+/*
 valorX=X;
 valorY=Y;
-/*
 double dx=double(valorX)/double(Image1->Width);
 double dy=double(valorY)/double(Image1->Height);
 int ix=int(ceil(dx*double(Image1->Picture->Width)));
@@ -68,7 +81,7 @@ Image1->Hint=texto;
 */
 }
 //---------------------------------------------------------------------------
-TfrmImageView::Graficar(TImage *img)
+void TfrmImageView::Graficar(TImage *img)
 {
 // copiar la informacion al clipboard
   unsigned int DataHandle;
@@ -115,6 +128,30 @@ TfrmImageView::Graficar(TImage *img)
   img->Refresh();
 */
 
+}
+//---------------------------------------------------------------------------
+
+
+
+
+void __fastcall TfrmImageView::Image1MouseDown(TObject *Sender,
+      TMouseButton Button, TShiftState Shift, int X, int Y)
+{
+Image1->Canvas->MoveTo(X,Y);
+x1=X;
+y1=Y;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TfrmImageView::Image1MouseUp(TObject *Sender,
+      TMouseButton Button, TShiftState Shift, int X, int Y)
+{
+Image1->Canvas->LineTo(X,Y);
+x2=X;
+y2=Y;
+double h = sqrt(pow((y1-y2),2)+pow((x2-x1),2));
+frmMain->setEdit(h);
+        
 }
 //---------------------------------------------------------------------------
 

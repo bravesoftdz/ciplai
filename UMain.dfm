@@ -1,8 +1,8 @@
 object frmMain: TfrmMain
-  Left = 304
-  Top = 197
-  Width = 1024
-  Height = 768
+  Left = 159
+  Top = 19
+  Width = 1483
+  Height = 1029
   Caption = 'Canopy cover'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -491,22 +491,22 @@ object frmMain: TfrmMain
   object Bevel1: TBevel
     Left = 0
     Top = 0
-    Width = 1006
+    Width = 1465
     Height = 2
     Align = alTop
   end
   object Bevel2: TBevel
     Left = 0
     Top = 57
-    Width = 1006
+    Width = 1465
     Height = 1
     Align = alTop
   end
   object Image1: TImage
     Left = 0
     Top = 58
-    Width = 1006
-    Height = 621
+    Width = 1465
+    Height = 882
     Align = alClient
     Picture.Data = {
       0A544A504547496D6167658E400700FFD8FFE000104A46494600010201006000
@@ -15367,7 +15367,7 @@ object frmMain: TfrmMain
   object Panel1: TPanel
     Left = 0
     Top = 2
-    Width = 1006
+    Width = 1465
     Height = 55
     Align = alTop
     BevelOuter = bvNone
@@ -15395,6 +15395,71 @@ object frmMain: TfrmMain
       Height = 55
       Cursor = crHSplit
       Beveled = True
+    end
+    object Label3: TLabel
+      Left = 760
+      Top = 8
+      Width = 125
+      Height = 16
+      Caption = 'Size of rule in pixels : '
+    end
+    object Label4: TLabel
+      Left = 760
+      Top = 32
+      Width = 123
+      Height = 16
+      Caption = 'Size of rule in cm      : '
+    end
+    object Label5: TLabel
+      Left = 960
+      Top = 8
+      Width = 14
+      Height = 16
+      Caption = 'px'
+    end
+    object Label6: TLabel
+      Left = 960
+      Top = 32
+      Width = 18
+      Height = 16
+      Caption = 'cm'
+    end
+    object Label7: TLabel
+      Left = 992
+      Top = 8
+      Width = 105
+      Height = 16
+      Caption = 'Plant distance     : '
+    end
+    object Label8: TLabel
+      Left = 992
+      Top = 32
+      Width = 105
+      Height = 16
+      Caption = 'Row distance      : '
+    end
+    object Label9: TLabel
+      Left = 1192
+      Top = 8
+      Width = 18
+      Height = 16
+      Caption = 'cm'
+    end
+    object Label10: TLabel
+      Left = 1192
+      Top = 32
+      Width = 18
+      Height = 16
+      Caption = 'cm'
+    end
+    object Label11: TLabel
+      Left = 1240
+      Top = 16
+      Width = 115
+      Height = 33
+      AutoSize = False
+      Caption = 'Number of plant per picture              :'
+      WordWrap = True
     end
     object Panel2: TPanel
       Left = 0
@@ -16095,7 +16160,7 @@ object frmMain: TfrmMain
         Left = 108
         Top = 4
         Width = 51
-        Height = 21
+        Height = 24
         TabOrder = 0
         Text = '0.00'
         OnChange = Edit1Change
@@ -16152,7 +16217,7 @@ object frmMain: TfrmMain
             Left = 5
             Top = 5
             Width = 185
-            Height = 21
+            Height = 24
             Anchors = [akLeft, akTop, akRight, akBottom]
             ReadOnly = True
             TabOrder = 0
@@ -16179,11 +16244,51 @@ object frmMain: TfrmMain
         end
       end
     end
+    object Edit2: TEdit
+      Left = 888
+      Top = 4
+      Width = 65
+      Height = 24
+      TabOrder = 3
+      Text = '0'
+    end
+    object Edit3: TEdit
+      Left = 888
+      Top = 28
+      Width = 65
+      Height = 24
+      TabOrder = 4
+      Text = '0'
+    end
+    object Edit4: TEdit
+      Left = 1120
+      Top = 4
+      Width = 65
+      Height = 24
+      TabOrder = 5
+      Text = '0'
+    end
+    object Edit5: TEdit
+      Left = 1120
+      Top = 28
+      Width = 65
+      Height = 24
+      TabOrder = 6
+      Text = '0'
+    end
+    object Edit6: TEdit
+      Left = 1368
+      Top = 28
+      Width = 65
+      Height = 24
+      TabOrder = 7
+      Text = '0'
+    end
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 679
-    Width = 1006
+    Top = 940
+    Width = 1465
     Height = 19
     Panels = <
       item
@@ -16208,8 +16313,8 @@ object frmMain: TfrmMain
   end
   object opicdiag: TOpenPictureDialog
     Filter = 'Bitmaps (*.bmp)|*.bmp'
-    Left = 824
-    Top = 16
+    Left = 1656
+    Top = 8
   end
   object MainMenu1: TMainMenu
     Left = 168
@@ -16273,7 +16378,7 @@ object frmMain: TfrmMain
     end
   end
   object OpenDialog1: TOpenDialog
-    Left = 784
-    Top = 16
+    Left = 1616
+    Top = 8
   end
 end

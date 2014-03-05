@@ -57,9 +57,9 @@ public:		// User declarations
         void ShowRecords();
         void Limpiar_sgLista();
         void CalculateAreaOfPictureTH();
-        void CalculateAreaOfPictureClassic(double,int,AnsiString);
+        void CalculateAreaOfPictureClassic(double,int,AnsiString,int,int,double,double,int);
         void msgFinal();
-        void proceso(AnsiString,AnsiString,AnsiString,int,int,int,int,int,double,TImage*,int);
+        void proceso(AnsiString,AnsiString,AnsiString,int,int,int,int,int,double,TImage*,int,int,int,double,double,int);
         void proceso2(AnsiString,AnsiString,AnsiString,int,int,int,int,int);
         void GuardarReporte();
         __fastcall TfrmReport(TComponent* Owner);

@@ -1,5 +1,4 @@
 //---------------------------------------------------------------------------
-
 #ifndef UMainH
 #define UMainH
 //---------------------------------------------------------------------------
@@ -16,7 +15,6 @@
 #include <Graphics.hpp>
 #include <Menus.hpp>
 #include <FileCtrl.hpp>
-
 //---------------------------------------------------------------------------
 class TfrmMain : public TForm
 {
@@ -68,6 +66,20 @@ __published:	// IDE-managed Components
         TButton *butFolderOutput;
         TEdit *edFolderOutput;
         TFileListBox *flbFiles;
+        TLabel *Label3;
+        TLabel *Label4;
+        TEdit *Edit2;
+        TEdit *Edit3;
+        TLabel *Label5;
+        TLabel *Label6;
+        TLabel *Label7;
+        TLabel *Label8;
+        TEdit *Edit4;
+        TEdit *Edit5;
+        TLabel *Label9;
+        TLabel *Label10;
+        TLabel *Label11;
+        TEdit *Edit6;
         void __fastcall sbExitClick(TObject *Sender);
         void __fastcall sbOpenFileClick(TObject *Sender);
         void __fastcall sbReportClick(TObject *Sender);
@@ -90,13 +102,11 @@ private:	// User declarations
         AnsiString InitialPicture;
         AnsiString FileNotPicture;
         void __fastcall AbrirFormularioReporte(bool);
-//        bool __fastcall SelectDirectory(const AnsiString Caption,
-//				const WideString Root,
-//				AnsiString &Directory);
 public:		// User declarations
         void HabilitarAplicacion();
         void ModificarStatusBar(AnsiString);
         bool processing;
+        void setEdit(int);
         __fastcall TfrmMain(TComponent* Owner);
 };
 //---------------------------------------------------------------------------

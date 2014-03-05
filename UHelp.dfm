@@ -1,13 +1,13 @@
 object frmHelp: TfrmHelp
-  Left = 804
-  Top = 131
-  Width = 709
-  Height = 645
+  Left = 559
+  Top = 132
+  Width = 881
+  Height = 801
   Caption = 'Help'
   Color = 4350521
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -11
+  Font.Height = -14
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   Icon.Data = {
@@ -485,17 +485,17 @@ object frmHelp: TfrmHelp
     0000000000000000000000000000}
   OldCreateOrder = False
   Position = poScreenCenter
-  PixelsPerInch = 96
-  TextHeight = 13
+  PixelsPerInch = 120
+  TextHeight = 16
   object RichEdit1: TRichEdit
-    Left = 10
-    Top = 10
-    Width = 679
-    Height = 327
+    Left = 12
+    Top = 12
+    Width = 836
+    Height = 403
     Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'Verdana'
     Font.Style = []
     Lines.Strings = (
@@ -505,7 +505,8 @@ object frmHelp: TfrmHelp
       ''
       
         '1. A digital camera (point and shoot camera or single-lens refle' +
-        'x (SLR) camera) with a standard lens (approximate '
+        'x (SLR) camera) with a standard lens '
+      '(approximate '
       '    focal length of 50 mm, if available).'
       '2. A tripod with extension leg and header for the camera.'
       '3. Bubble level.'
@@ -515,7 +516,8 @@ object frmHelp: TfrmHelp
       ''
       
         '1. If you require taking photographs among different days for mo' +
-        'nitoring purposes, establish preferably a fixed hour '
+        'nitoring purposes, establish preferably a fixed '
+      'hour '
       
         '    to take the photographs considering the moment with the best' +
         ' illumination during the day.'
@@ -531,11 +533,13 @@ object frmHelp: TfrmHelp
         ' an extension leg pointing the lens of the camera '
       
         '    directly to the ground (make use of the bubble level to loca' +
-        'te the camera parallel to the ground). The camera '
+        'te the camera parallel to the ground). The '
+      'camera '
       '    should be placed 1 meter over the top of the plant.'
       
         '4. If available, make use of a remote control or a cable and a l' +
-        'aptop for shooting to avoid being part of the image.'
+        'aptop for shooting to avoid being part of the '
+      'image.'
       
         '5. Download the image and use the CIP-Vegetation Cover software ' +
         'to estimate canopy cover.')
@@ -544,17 +548,17 @@ object frmHelp: TfrmHelp
     TabOrder = 1
   end
   object Button1: TButton
-    Left = 576
-    Top = 568
-    Width = 107
-    Height = 33
+    Left = 709
+    Top = 699
+    Width = 132
+    Height = 41
     Caption = '&Close'
     TabOrder = 0
     OnClick = Button1Click
   end
   object Panel1: TPanel
-    Left = 175
-    Top = 350
+    Left = 215
+    Top = 431
     Width = 335
     Height = 252
     AutoSize = True

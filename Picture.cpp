@@ -1,10 +1,7 @@
-#ifndef PictureH
-#define PictureH
-#include "Picture.h"
 #include <fstream>
 #include "vector.h"
 #include "sstream.h"
-using namespace modeling;
+#include "Picture.h"
 //------------------------------------------------------------------------------
 //  Picture class
 //------------------------------------------------------------------------------
@@ -21,6 +18,7 @@ Picture::Picture(int nreg,int nchar)
  totalRGB=0;
  TotalPixel=NULL;
  LAI=NULL;
+ Area=NULL;
  TimeDuration=NULL;
  SaveOutput=false;
 
@@ -31,6 +29,7 @@ Picture::Picture(int nreg,int nchar)
  Width=new int[RecNum];
  TotalPixel=new int[RecNum];
  LAI=new double[RecNum];
+ Area=new double[RecNum];
  TimeDuration=new char*[RecNum];
  for(int i=0;i<RecNum;i++)
    TimeDuration[i]=new char[CharNum+1];
@@ -66,6 +65,11 @@ Picture::~Picture()
  {
   delete[]LAI;
   LAI=NULL;
+ }
+ if (Area != NULL)
+ {
+  delete[]Area;
+  Area=NULL;
  }
  if (TimeDuration != NULL)
  {
@@ -105,6 +109,7 @@ void Picture::CleanRecord(int rec)
     totalRGB=0;
     TotalPixel[rec]=0;
     LAI[rec]=0.0;
+    Area[rec]=0.0;
     strcpy(FileName[rec],"");
     strcpy(TimeDuration[rec],"");
 }
@@ -135,6 +140,7 @@ void Picture::DeleteRecord(int rec)
       Width[i]=Width[i+1];
       TotalPixel[i]=TotalPixel[i+1];
       LAI[i]=LAI[i+1];
+      Area[i]=Area[i+1];
       strcpy(FileName[i],FileName[i+1]);
       strcpy(TimeDuration[i],TimeDuration[i+1]);
     }
@@ -150,5 +156,4 @@ void Picture::addRGB(int red,int green, int blue,int reg)
   rgb[reg][2]=blue;
 }
 //---------------------------------------------------------------------------
-#endif
 

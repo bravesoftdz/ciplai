@@ -1,5 +1,3 @@
-namespace modeling
-{
   class Picture
   {
    public:
@@ -11,6 +9,7 @@ namespace modeling
      int* TotalPixel;
      int rgb[100][3];
      double* LAI;
+     double* Area;
      char** TimeDuration;
      void CleanVariables();
      int GetTotalRecords();
@@ -25,4 +24,3 @@ namespace modeling
      int CharNum;
      int RecNum;
   };
-}
