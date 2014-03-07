@@ -407,7 +407,7 @@ void TfrmReport::proceso(AnsiString archivoOrig,AnsiString archivo,AnsiString Ar
   double lai=(area/(double(plantxPic)*plantDist*rowDist))*100.00;
   picture->TotalPixel[reg]=contPixel;
   picture->LAI[reg]=lai;
-  picture->Area[reg]=area;
+  picture->Area[reg]=area*1000;
   frmImage->Visible=true;
 }
 

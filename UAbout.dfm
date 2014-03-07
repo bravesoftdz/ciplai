@@ -191,11 +191,11 @@ object frmAbout: TfrmAbout
       Caption = 'Mariana Cruz, Ph. D.'
     end
     object Label6: TLabel
-      Left = 223
+      Left = 216
       Top = 53
-      Width = 98
+      Width = 112
       Height = 19
-      Caption = '(version 2.1)'
+      Caption = '(version 2.1.1)'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
       Font.Height = -17

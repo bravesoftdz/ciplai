@@ -76,9 +76,9 @@ object frmPresentation: TfrmPresentation
       object Label2: TLabel
         Left = 463
         Top = 89
-        Width = 66
+        Width = 76
         Height = 16
-        Caption = 'Version 2.1'
+        Caption = 'Version 2.1.1'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clSilver
         Font.Height = -15
