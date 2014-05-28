@@ -23,6 +23,7 @@ __published:	// IDE-managed Components
         TSpeedButton *sbReport;
         TSpeedButton *sbExit;
         TSaveDialog *sdSaveReport;
+        TLabel *lblError;
         void __fastcall sgListaDrawCell(TObject *Sender, int ACol,
           int ARow, TRect &Rect, TGridDrawState State);
         void __fastcall sgListaSelectCell(TObject *Sender, int ACol,

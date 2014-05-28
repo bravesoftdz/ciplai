@@ -1,13 +1,13 @@
 object frmMain: TfrmMain
-  Left = 159
-  Top = 19
+  Left = 301
+  Top = 134
   Width = 1483
   Height = 1029
   Caption = 'Canopy cover'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -14
+  Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   Icon.Data = {
@@ -486,27 +486,27 @@ object frmMain: TfrmMain
   Menu = MainMenu1
   OldCreateOrder = False
   WindowState = wsMaximized
-  PixelsPerInch = 120
-  TextHeight = 16
+  PixelsPerInch = 96
+  TextHeight = 13
   object Bevel1: TBevel
     Left = 0
     Top = 0
-    Width = 1465
+    Width = 1467
     Height = 2
     Align = alTop
   end
   object Bevel2: TBevel
     Left = 0
-    Top = 57
-    Width = 1465
+    Top = 46
+    Width = 1467
     Height = 1
     Align = alTop
   end
   object Image1: TImage
     Left = 0
-    Top = 58
-    Width = 1465
-    Height = 882
+    Top = 47
+    Width = 1467
+    Height = 905
     Align = alClient
     Picture.Data = {
       0A544A504547496D6167658E400700FFD8FFE000104A46494600010201006000
@@ -15367,112 +15367,112 @@ object frmMain: TfrmMain
   object Panel1: TPanel
     Left = 0
     Top = 2
-    Width = 1465
-    Height = 55
+    Width = 1467
+    Height = 44
     Align = alTop
     BevelOuter = bvNone
     TabOrder = 0
     object Splitter1: TSplitter
-      Left = 330
+      Left = 268
       Top = 0
-      Width = 4
-      Height = 55
+      Width = 3
+      Height = 44
       Cursor = crHSplit
       Beveled = True
     end
     object Splitter2: TSplitter
-      Left = 503
+      Left = 409
       Top = 0
-      Width = 4
-      Height = 55
+      Width = 3
+      Height = 44
       Cursor = crHSplit
       Beveled = True
     end
     object Splitter3: TSplitter
-      Left = 740
+      Left = 601
       Top = 0
       Width = 3
-      Height = 55
+      Height = 44
       Cursor = crHSplit
       Beveled = True
     end
     object Label3: TLabel
-      Left = 760
-      Top = 8
-      Width = 125
-      Height = 16
-      Caption = 'Size of rule in pixels : '
+      Left = 618
+      Top = 7
+      Width = 96
+      Height = 13
+      Caption = 'Ruler length (pixel) : '
     end
     object Label4: TLabel
-      Left = 760
-      Top = 32
-      Width = 123
-      Height = 16
-      Caption = 'Size of rule in cm      : '
+      Left = 618
+      Top = 26
+      Width = 95
+      Height = 13
+      Caption = 'Ruler length (cm)   : '
     end
     object Label5: TLabel
-      Left = 960
-      Top = 8
-      Width = 14
-      Height = 16
+      Left = 780
+      Top = 7
+      Width = 11
+      Height = 13
       Caption = 'px'
     end
     object Label6: TLabel
-      Left = 960
-      Top = 32
-      Width = 18
-      Height = 16
+      Left = 780
+      Top = 26
+      Width = 14
+      Height = 13
       Caption = 'cm'
     end
     object Label7: TLabel
-      Left = 992
-      Top = 8
-      Width = 105
-      Height = 16
+      Left = 806
+      Top = 7
+      Width = 88
+      Height = 13
       Caption = 'Plant distance     : '
     end
     object Label8: TLabel
-      Left = 992
-      Top = 32
-      Width = 105
-      Height = 16
+      Left = 806
+      Top = 26
+      Width = 89
+      Height = 13
       Caption = 'Row distance      : '
     end
     object Label9: TLabel
-      Left = 1192
-      Top = 8
-      Width = 18
-      Height = 16
+      Left = 969
+      Top = 7
+      Width = 14
+      Height = 13
       Caption = 'cm'
     end
     object Label10: TLabel
-      Left = 1192
-      Top = 32
-      Width = 18
-      Height = 16
+      Left = 969
+      Top = 26
+      Width = 14
+      Height = 13
       Caption = 'cm'
     end
     object Label11: TLabel
-      Left = 1240
-      Top = 16
-      Width = 115
-      Height = 33
+      Left = 1008
+      Top = 5
+      Width = 93
+      Height = 27
       AutoSize = False
-      Caption = 'Number of plant per picture              :'
+      Caption = 'Number of plants per picture     :'
       WordWrap = True
     end
     object Panel2: TPanel
       Left = 0
       Top = 0
-      Width = 330
-      Height = 55
+      Width = 268
+      Height = 44
       Align = alLeft
       TabOrder = 0
       object sbEmptyFileList: TSpeedButton
-        Left = 5
-        Top = 4
-        Width = 47
-        Height = 46
+        Left = 4
+        Top = 3
+        Width = 38
+        Height = 38
         Hint = 'Close all'
         Glyph.Data = {
           360C0000424D360C000000000000360000002800000020000000200000000100
@@ -15578,10 +15578,10 @@ object frmMain: TfrmMain
         OnClick = sbEmptyFileListClick
       end
       object sbOpenFile: TSpeedButton
-        Left = 53
-        Top = 4
-        Width = 47
-        Height = 46
+        Left = 43
+        Top = 3
+        Width = 38
+        Height = 38
         Hint = 'Open Image'
         Glyph.Data = {
           360C0000424D360C000000000000360000002800000020000000200000000100
@@ -15687,10 +15687,10 @@ object frmMain: TfrmMain
         OnClick = sbOpenFileClick
       end
       object sbOpenFiles: TSpeedButton
-        Left = 101
-        Top = 4
-        Width = 47
-        Height = 46
+        Left = 82
+        Top = 3
+        Width = 38
+        Height = 38
         Hint = 'Open image folder'
         Glyph.Data = {
           360C0000424D360C000000000000360000002800000020000000200000000100
@@ -15796,10 +15796,10 @@ object frmMain: TfrmMain
         OnClick = sbOpenFilesClick
       end
       object sbCalculate: TSpeedButton
-        Left = 160
-        Top = 4
-        Width = 47
-        Height = 46
+        Left = 130
+        Top = 3
+        Width = 38
+        Height = 38
         Hint = 'Estimate canopy cover'
         Glyph.Data = {
           360C0000424D360C000000000000360000002800000020000000200000000100
@@ -15905,10 +15905,10 @@ object frmMain: TfrmMain
         OnClick = sbCalculateClick
       end
       object sbReport: TSpeedButton
-        Left = 219
-        Top = 4
-        Width = 47
-        Height = 46
+        Left = 178
+        Top = 3
+        Width = 38
+        Height = 38
         Hint = 'Show report'
         Glyph.Data = {
           360C0000424D360C000000000000360000002800000020000000200000000100
@@ -16014,10 +16014,10 @@ object frmMain: TfrmMain
         OnClick = sbReportClick
       end
       object sbExit: TSpeedButton
-        Left = 277
-        Top = 4
-        Width = 47
-        Height = 46
+        Left = 225
+        Top = 3
+        Width = 38
+        Height = 38
         Hint = 'Exit'
         Glyph.Data = {
           360C0000424D360C000000000000360000002800000020000000200000000100
@@ -16124,69 +16124,69 @@ object frmMain: TfrmMain
       end
     end
     object Panel3: TPanel
-      Left = 334
+      Left = 271
       Top = 0
-      Width = 169
-      Height = 55
+      Width = 138
+      Height = 44
       Align = alLeft
       TabOrder = 1
       object Label1: TLabel
-        Left = 16
-        Top = 10
-        Width = 83
-        Height = 16
+        Left = 13
+        Top = 8
+        Width = 68
+        Height = 13
         Caption = 'Threshold ='
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -15
+        Font.Height = -12
         Font.Name = 'MS Sans Serif'
         Font.Style = [fsBold]
         ParentFont = False
       end
       object Label2: TLabel
-        Left = 23
-        Top = 30
-        Width = 77
-        Height = 16
+        Left = 19
+        Top = 24
+        Width = 62
+        Height = 13
         Caption = '(From -1 to 1)'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -15
+        Font.Height = -12
         Font.Name = 'MS Sans Serif'
         Font.Style = []
         ParentFont = False
       end
       object Edit1: TEdit
-        Left = 108
-        Top = 4
-        Width = 51
-        Height = 24
+        Left = 88
+        Top = 3
+        Width = 41
+        Height = 21
         TabOrder = 0
         Text = '0.00'
         OnChange = Edit1Change
       end
     end
     object Panel4: TPanel
-      Left = 507
+      Left = 412
       Top = 0
-      Width = 233
-      Height = 55
+      Width = 189
+      Height = 44
       Align = alLeft
       BevelOuter = bvNone
       TabOrder = 2
       object Panel5: TPanel
         Left = 0
         Top = 0
-        Width = 233
-        Height = 20
+        Width = 189
+        Height = 16
         Align = alTop
         BevelOuter = bvNone
         TabOrder = 0
         object cbSave: TCheckBox
-          Left = 10
+          Left = 8
           Top = 0
-          Width = 149
-          Height = 21
+          Width = 121
+          Height = 17
           Caption = 'Save output picture'
           Checked = True
           State = cbChecked
@@ -16196,28 +16196,28 @@ object frmMain: TfrmMain
       end
       object Panel6: TPanel
         Left = 0
-        Top = 20
-        Width = 233
-        Height = 35
+        Top = 16
+        Width = 189
+        Height = 28
         Align = alClient
         BevelOuter = bvNone
         TabOrder = 1
         object Panel7: TPanel
           Left = 0
           Top = 0
-          Width = 193
-          Height = 35
+          Width = 157
+          Height = 28
           Align = alClient
           BevelOuter = bvNone
           TabOrder = 0
           DesignSize = (
-            193
-            35)
+            157
+            28)
           object edFolderOutput: TEdit
-            Left = 5
-            Top = 5
-            Width = 185
-            Height = 24
+            Left = 4
+            Top = 4
+            Width = 150
+            Height = 21
             Anchors = [akLeft, akTop, akRight, akBottom]
             ReadOnly = True
             TabOrder = 0
@@ -16225,18 +16225,18 @@ object frmMain: TfrmMain
           end
         end
         object Panel8: TPanel
-          Left = 193
+          Left = 157
           Top = 0
-          Width = 40
-          Height = 35
+          Width = 32
+          Height = 28
           Align = alRight
           BevelOuter = bvNone
           TabOrder = 1
           object butFolderOutput: TButton
             Left = 2
-            Top = 7
-            Width = 31
-            Height = 21
+            Top = 6
+            Width = 25
+            Height = 17
             Caption = '...'
             TabOrder = 0
             OnClick = butFolderOutputClick
@@ -16245,50 +16245,50 @@ object frmMain: TfrmMain
       end
     end
     object Edit2: TEdit
-      Left = 888
-      Top = 4
-      Width = 65
-      Height = 24
+      Left = 722
+      Top = 3
+      Width = 52
+      Height = 21
       TabOrder = 3
       Text = '0'
     end
     object Edit3: TEdit
-      Left = 888
-      Top = 28
-      Width = 65
-      Height = 24
+      Left = 722
+      Top = 23
+      Width = 52
+      Height = 21
       TabOrder = 4
       Text = '0'
     end
     object Edit4: TEdit
-      Left = 1120
-      Top = 4
-      Width = 65
-      Height = 24
+      Left = 910
+      Top = 3
+      Width = 53
+      Height = 21
       TabOrder = 5
       Text = '0'
     end
     object Edit5: TEdit
-      Left = 1120
-      Top = 28
-      Width = 65
-      Height = 24
+      Left = 910
+      Top = 23
+      Width = 53
+      Height = 21
       TabOrder = 6
       Text = '0'
     end
     object Edit6: TEdit
-      Left = 1368
-      Top = 28
-      Width = 65
-      Height = 24
+      Left = 1112
+      Top = 15
+      Width = 52
+      Height = 21
       TabOrder = 7
       Text = '0'
     end
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 940
-    Width = 1465
+    Top = 952
+    Width = 1467
     Height = 19
     Panels = <
       item
@@ -16302,11 +16302,11 @@ object frmMain: TfrmMain
     SimplePanel = False
   end
   object flbFiles: TFileListBox
-    Left = 30
-    Top = 138
-    Width = 119
-    Height = 119
-    ItemHeight = 16
+    Left = 24
+    Top = 112
+    Width = 97
+    Height = 97
+    ItemHeight = 13
     Mask = '*.bmp'
     TabOrder = 2
     Visible = False
@@ -16363,6 +16363,10 @@ object frmMain: TfrmMain
       object Help2: TMenuItem
         Caption = '&Help'
         OnClick = Help2Click
+      end
+      object Userguide1: TMenuItem
+        Caption = 'User guide'
+        OnClick = Userguide1Click
       end
       object N3: TMenuItem
         Caption = '-'

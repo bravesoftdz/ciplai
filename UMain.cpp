@@ -449,3 +449,11 @@ void TfrmMain::setEdit(int valor)
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TfrmMain::Userguide1Click(TObject *Sender)
+{
+  AnsiString archivo=ExtractFileDir(Application->ExeName);
+  archivo=archivo+"\\readme.chm";
+  ShellExecute(Handle,"open",archivo.c_str(),0,0,SW_MAXIMIZE);
+}
+//---------------------------------------------------------------------------
+

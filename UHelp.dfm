@@ -1,13 +1,13 @@
 object frmHelp: TfrmHelp
-  Left = 559
-  Top = 132
-  Width = 881
-  Height = 801
+  Left = 254
+  Top = 266
+  Width = 718
+  Height = 657
   Caption = 'Help'
   Color = 4350521
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -14
+  Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   Icon.Data = {
@@ -485,17 +485,17 @@ object frmHelp: TfrmHelp
     0000000000000000000000000000}
   OldCreateOrder = False
   Position = poScreenCenter
-  PixelsPerInch = 120
-  TextHeight = 16
+  PixelsPerInch = 96
+  TextHeight = 13
   object RichEdit1: TRichEdit
-    Left = 12
-    Top = 12
-    Width = 836
-    Height = 403
+    Left = 10
+    Top = 10
+    Width = 679
+    Height = 327
     Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -15
+    Font.Height = -12
     Font.Name = 'Verdana'
     Font.Style = []
     Lines.Strings = (
@@ -516,7 +516,8 @@ object frmHelp: TfrmHelp
       ''
       
         '1. If you require taking photographs among different days for mo' +
-        'nitoring purposes, establish preferably a fixed '
+        'nitoring purposes, establish preferably a '
+      'fixed '
       'hour '
       
         '    to take the photographs considering the moment with the best' +
@@ -530,7 +531,8 @@ object frmHelp: TfrmHelp
       '    -  Maximum image resolution'
       
         '3. As showed in figure 1, install the camera on the tripod using' +
-        ' an extension leg pointing the lens of the camera '
+        ' an extension leg pointing the lens of the '
+      'camera '
       
         '    directly to the ground (make use of the bubble level to loca' +
         'te the camera parallel to the ground). The '
@@ -548,17 +550,17 @@ object frmHelp: TfrmHelp
     TabOrder = 1
   end
   object Button1: TButton
-    Left = 709
-    Top = 699
-    Width = 132
-    Height = 41
+    Left = 576
+    Top = 568
+    Width = 107
+    Height = 33
     Caption = '&Close'
     TabOrder = 0
     OnClick = Button1Click
   end
   object Panel1: TPanel
-    Left = 215
-    Top = 431
+    Left = 175
+    Top = 350
     Width = 335
     Height = 252
     AutoSize = True

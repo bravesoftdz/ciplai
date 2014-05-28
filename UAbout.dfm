@@ -1,14 +1,14 @@
 object frmAbout: TfrmAbout
-  Left = 923
-  Top = 298
+  Left = 895
+  Top = 343
   BorderStyle = bsDialog
   Caption = 'Canopy cover'
-  ClientHeight = 533
-  ClientWidth = 565
+  ClientHeight = 433
+  ClientWidth = 459
   Color = 4350521
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -14
+  Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   Icon.Data = {
@@ -38,176 +38,176 @@ object frmAbout: TfrmAbout
     000000000000000000000000000000000000000000000000000000000000}
   OldCreateOrder = False
   Position = poScreenCenter
-  PixelsPerInch = 120
-  TextHeight = 16
+  PixelsPerInch = 96
+  TextHeight = 13
   object Label14: TLabel
-    Left = 20
-    Top = 433
-    Width = 68
-    Height = 16
+    Left = 16
+    Top = 352
+    Width = 57
+    Height = 13
     Caption = 'Contact us :'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -15
+    Font.Height = -12
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
   end
   object Label16: TLabel
-    Left = 20
-    Top = 453
-    Width = 171
-    Height = 16
+    Left = 16
+    Top = 368
+    Width = 143
+    Height = 13
     Caption = 'R.QUIROZ@CGIAR.ORG'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clNavy
-    Font.Height = -15
+    Font.Height = -12
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold, fsUnderline]
     ParentFont = False
   end
   object Label10: TLabel
-    Left = 148
-    Top = 98
-    Width = 278
-    Height = 18
+    Left = 120
+    Top = 80
+    Width = 223
+    Height = 14
     Caption = 'International Potato Center (CIP)'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -15
+    Font.Height = -12
     Font.Name = 'Verdana'
     Font.Style = [fsBold]
     ParentFont = False
   end
   object Label12: TLabel
-    Left = 148
-    Top = 118
-    Width = 411
-    Height = 18
+    Left = 120
+    Top = 96
+    Width = 331
+    Height = 14
     Caption = 'Production Systems and The Environment Division'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -15
+    Font.Height = -12
     Font.Name = 'Verdana'
     Font.Style = [fsBold]
     ParentFont = False
   end
   object Label13: TLabel
-    Left = 20
-    Top = 482
-    Width = 102
-    Height = 16
+    Left = 16
+    Top = 392
+    Width = 82
+    Height = 13
     Caption = 'Visit our website :'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -15
+    Font.Height = -12
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
   end
   object Label15: TLabel
-    Left = 20
-    Top = 502
-    Width = 165
-    Height = 16
+    Left = 16
+    Top = 408
+    Width = 143
+    Height = 13
     Caption = 'http://inrm.cip.cgiar.org/'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clNavy
-    Font.Height = -15
+    Font.Height = -12
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold, fsUnderline]
     ParentFont = False
   end
   object GroupBox1: TGroupBox
-    Left = 9
-    Top = 158
-    Width = 544
-    Height = 267
+    Left = 7
+    Top = 128
+    Width = 442
+    Height = 217
     Color = 7439196
     ParentColor = False
     TabOrder = 0
     object Label2: TLabel
-      Left = 111
-      Top = 32
-      Width = 329
-      Height = 24
+      Left = 90
+      Top = 26
+      Width = 263
+      Height = 19
       Caption = 'Software to estimate canopy cover'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
-      Font.Height = -20
+      Font.Height = -16
       Font.Name = 'Arial'
       Font.Style = [fsBold]
       ParentFont = False
     end
     object Label3: TLabel
-      Left = 112
-      Top = 98
-      Width = 322
-      Height = 16
+      Left = 91
+      Top = 80
+      Width = 259
+      Height = 13
       Caption = 'The design, structure and development of this software'
     end
     object Label4: TLabel
-      Left = 42
-      Top = 116
-      Width = 468
-      Height = 16
+      Left = 34
+      Top = 94
+      Width = 375
+      Height = 13
       Caption = 
         'was done by the team of the Production Systems and The Environme' +
         'nt Division'
     end
     object Label5: TLabel
-      Left = 185
-      Top = 148
-      Width = 175
-      Height = 16
+      Left = 150
+      Top = 120
+      Width = 142
+      Height = 13
       Caption = 'Roberto Quiroz Guerra, Ph. D.'
     end
     object Label7: TLabel
-      Left = 192
-      Top = 214
-      Width = 162
-      Height = 16
+      Left = 156
+      Top = 174
+      Width = 130
+      Height = 13
       Caption = 'Javier Osorio Leyton, M.Sc.'
     end
     object Label8: TLabel
-      Left = 190
-      Top = 236
-      Width = 171
-      Height = 16
+      Left = 154
+      Top = 192
+      Width = 134
+      Height = 13
       Caption = 'Jos'#233' Guerrero Romero, Eng.'
     end
     object Label9: TLabel
-      Left = 207
-      Top = 170
-      Width = 135
-      Height = 16
+      Left = 168
+      Top = 138
+      Width = 106
+      Height = 13
       Caption = 'Carolina Barreda, Eng.'
     end
     object Label11: TLabel
-      Left = 212
-      Top = 192
-      Width = 119
-      Height = 16
+      Left = 172
+      Top = 156
+      Width = 98
+      Height = 13
       Caption = 'Mariana Cruz, Ph. D.'
     end
     object Label6: TLabel
-      Left = 216
-      Top = 53
-      Width = 112
-      Height = 19
-      Caption = '(version 2.1.1)'
+      Left = 181
+      Top = 43
+      Width = 83
+      Height = 18
+      Caption = '(version 2.2'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
-      Font.Height = -17
+      Font.Height = -15
       Font.Name = 'Arial'
       Font.Style = [fsBold]
       ParentFont = False
     end
     object Panel1: TPanel
-      Left = 10
-      Top = 20
-      Width = 44
-      Height = 44
+      Left = 8
+      Top = 16
+      Width = 36
+      Height = 36
       BevelInner = bvLowered
       BevelOuter = bvLowered
       Caption = 'Panel1'
@@ -215,8 +215,8 @@ object frmAbout: TfrmAbout
       object Image1: TImage
         Left = 2
         Top = 2
-        Width = 40
-        Height = 40
+        Width = 32
+        Height = 32
         AutoSize = True
         Picture.Data = {
           055449636F6E0000010003001010000001002000680400003600000020200000
@@ -695,10 +695,10 @@ object frmAbout: TfrmAbout
     end
   end
   object Panel2: TPanel
-    Left = 12
-    Top = 12
-    Width = 128
-    Height = 128
+    Left = 10
+    Top = 10
+    Width = 104
+    Height = 104
     BevelInner = bvLowered
     BevelOuter = bvLowered
     TabOrder = 1
@@ -1652,10 +1652,10 @@ object frmAbout: TfrmAbout
     end
   end
   object Button1: TButton
-    Left = 384
-    Top = 473
-    Width = 161
-    Height = 40
+    Left = 312
+    Top = 384
+    Width = 131
+    Height = 33
     Caption = '&Close'
     TabOrder = 2
     OnClick = Button1Click

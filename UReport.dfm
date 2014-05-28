@@ -1,42 +1,42 @@
 object frmReport: TfrmReport
-  Left = 513
-  Top = 154
+  Left = 545
+  Top = 171
   BorderIcons = []
   BorderStyle = bsSingle
   Caption = 'Report'
-  ClientHeight = 383
-  ClientWidth = 946
+  ClientHeight = 325
+  ClientWidth = 859
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -14
+  Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   FormStyle = fsStayOnTop
   OldCreateOrder = False
   Visible = True
   OnClose = FormClose
-  PixelsPerInch = 120
-  TextHeight = 16
+  PixelsPerInch = 96
+  TextHeight = 13
   object lblWorking: TLabel
-    Left = 10
-    Top = 335
-    Width = 198
-    Height = 16
+    Left = 8
+    Top = 280
+    Width = 166
+    Height = 13
     Caption = 'Wait, application is working !'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = 14090240
-    Font.Height = -15
+    Font.Height = -12
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
     Visible = False
   end
   object sbReport: TSpeedButton
-    Left = 830
-    Top = 329
-    Width = 46
-    Height = 46
+    Left = 754
+    Top = 275
+    Width = 38
+    Height = 38
     Hint = 'Save report'
     Glyph.Data = {
       360C0000424D360C000000000000360000002800000020000000200000000100
@@ -142,10 +142,10 @@ object frmReport: TfrmReport
     OnClick = sbReportClick
   end
   object sbExit: TSpeedButton
-    Left = 887
-    Top = 329
-    Width = 47
-    Height = 46
+    Left = 801
+    Top = 275
+    Width = 38
+    Height = 38
     Hint = 'Exit'
     Glyph.Data = {
       360C0000424D360C000000000000360000002800000020000000200000000100
@@ -251,10 +251,10 @@ object frmReport: TfrmReport
     OnClick = sbExitClick
   end
   object sbDelete: TSpeedButton
-    Left = 772
-    Top = 329
-    Width = 46
-    Height = 46
+    Left = 707
+    Top = 275
+    Width = 38
+    Height = 38
     Hint = 'Delete picture from list'
     Glyph.Data = {
       360C0000424D360C000000000000360000002800000020000000200000000100
@@ -359,11 +359,28 @@ object frmReport: TfrmReport
     ShowHint = True
     OnClick = sbDeleteClick
   end
+  object lblError: TLabel
+    Left = 8
+    Top = 266
+    Width = 361
+    Height = 26
+    Caption = 
+      'If the calculated canpy cover % is greater than 100%, probably t' +
+      'he input data is incorrect, please check your data.'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clRed
+    Font.Height = -3
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+    Visible = False
+    WordWrap = True
+  end
   object sgLista: TStringGrid
-    Left = 7
-    Top = 10
-    Width = 930
-    Height = 311
+    Left = 6
+    Top = 8
+    Width = 843
+    Height = 253
     BorderStyle = bsNone
     Color = clTeal
     ColCount = 8
@@ -374,7 +391,7 @@ object frmReport: TfrmReport
     FixedRows = 2
     Font.Charset = DEFAULT_CHARSET
     Font.Color = 14803425
-    Font.Height = -15
+    Font.Height = -12
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goDrawFocusSelected, goColSizing, goRowSelect]
@@ -393,10 +410,10 @@ object frmReport: TfrmReport
       64)
   end
   object pbPicture: TProgressBar
-    Left = 10
-    Top = 354
-    Width = 474
-    Height = 20
+    Left = 8
+    Top = 296
+    Width = 385
+    Height = 16
     Min = 0
     Max = 100
     Step = 1

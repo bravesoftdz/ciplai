@@ -80,6 +80,7 @@ __published:	// IDE-managed Components
         TLabel *Label10;
         TLabel *Label11;
         TEdit *Edit6;
+        TMenuItem *Userguide1;
         void __fastcall sbExitClick(TObject *Sender);
         void __fastcall sbOpenFileClick(TObject *Sender);
         void __fastcall sbReportClick(TObject *Sender);
@@ -92,6 +93,7 @@ __published:	// IDE-managed Components
         void __fastcall Edit1Change(TObject *Sender);
         void __fastcall cbSaveClick(TObject *Sender);
         void __fastcall butFolderOutputClick(TObject *Sender);
+        void __fastcall Userguide1Click(TObject *Sender);
 private:	// User declarations
 //        AnsiString *ListaArchivos;
         double threshold;

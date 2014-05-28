@@ -4,99 +4,99 @@ object frmPresentation: TfrmPresentation
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   Caption = 'Canopy Cover'
-  ClientHeight = 398
-  ClientWidth = 610
+  ClientHeight = 323
+  ClientWidth = 496
   Color = 4350521
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -14
+  Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
-  PixelsPerInch = 120
-  TextHeight = 16
+  PixelsPerInch = 96
+  TextHeight = 13
   object GroupBox1: TGroupBox
     Left = 0
     Top = 0
-    Width = 610
-    Height = 390
+    Width = 496
+    Height = 317
     Color = 4350521
     ParentColor = False
     TabOrder = 0
     object Label3: TLabel
-      Left = 17
-      Top = 350
-      Width = 63
-      Height = 16
+      Left = 14
+      Top = 284
+      Width = 50
+      Height = 13
       Caption = 'Lima, Per'#250
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -15
+      Font.Height = -12
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentFont = False
     end
     object Label4: TLabel
-      Left = 411
-      Top = 305
-      Width = 188
-      Height = 16
+      Left = 334
+      Top = 248
+      Width = 152
+      Height = 13
       Caption = 'International Potato Center (CIP)'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clSilver
-      Font.Height = -15
+      Font.Height = -12
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentFont = False
     end
     object GroupBox2: TGroupBox
-      Left = 22
-      Top = 20
-      Width = 572
-      Height = 119
+      Left = 18
+      Top = 16
+      Width = 465
+      Height = 97
       Color = 7439196
       ParentColor = False
       TabOrder = 0
       object Label1: TLabel
-        Left = 135
-        Top = 30
-        Width = 284
-        Height = 52
+        Left = 16
+        Top = 32
+        Width = 391
+        Height = 22
         Alignment = taCenter
         Caption = 'SOFTWARE TO ESTIMATE CANOPY COVER'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWhite
-        Font.Height = -23
+        Font.Height = -19
         Font.Name = 'Times New Roman'
         Font.Style = [fsBold, fsItalic]
         ParentFont = False
         WordWrap = True
       end
       object Label2: TLabel
-        Left = 463
-        Top = 89
-        Width = 76
-        Height = 16
-        Caption = 'Version 2.1.1'
+        Left = 376
+        Top = 72
+        Width = 53
+        Height = 13
+        Caption = 'Version 2.2'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clSilver
-        Font.Height = -15
+        Font.Height = -12
         Font.Name = 'MS Sans Serif'
         Font.Style = []
         ParentFont = False
       end
     end
     object cmdContinue: TButton
-      Left = 406
-      Top = 338
-      Width = 184
-      Height = 36
+      Left = 330
+      Top = 275
+      Width = 149
+      Height = 29
       Caption = 'Continue ...'
       Default = True
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
-      Font.Height = -18
+      Font.Height = -15
       Font.Name = 'Times New Roman'
       Font.Style = [fsBold, fsItalic]
       ModalResult = 1
@@ -104,17 +104,17 @@ object frmPresentation: TfrmPresentation
       TabOrder = 1
     end
     object Panel1: TPanel
-      Left = 39
-      Top = 162
-      Width = 317
-      Height = 154
+      Left = 32
+      Top = 132
+      Width = 257
+      Height = 125
       ParentColor = True
       TabOrder = 2
       object Image2: TImage
         Left = 1
         Top = 1
-        Width = 315
-        Height = 152
+        Width = 255
+        Height = 123
         Align = alClient
         AutoSize = True
         Picture.Data = {
@@ -2616,10 +2616,10 @@ object frmPresentation: TfrmPresentation
       end
     end
     object Panel2: TPanel
-      Left = 433
-      Top = 167
-      Width = 129
-      Height = 130
+      Left = 352
+      Top = 136
+      Width = 105
+      Height = 105
       ParentColor = True
       TabOrder = 3
       object Image1: TImage

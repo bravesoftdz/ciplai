@@ -134,6 +134,7 @@ void TfrmReport::Limpiar_sgLista()
   sgLista->RowCount=TotalRec;
   sgLista->Row=2;
   sgLista->Col=0;
+  lblError->Visible=false;
 }
 //---------------------------------------------------------------------------
 void __fastcall TfrmReport::sgListaSelectCell(TObject *Sender, int ACol,
@@ -150,7 +151,16 @@ void TfrmReport::MostrarOutput(int ARow)
     if(picture->SaveOutput)
     {
       AnsiString archivo;
-      archivo=picture->FileName[ARow-2];
+      try
+      {
+        archivo=picture->FileName[ARow-2];
+      }
+      catch(...)
+      {
+        frmImage3->CargarImagen(FileNotPicture,2);
+        frmImage3->Visible=true;
+        return;
+      }
       AnsiString archivoX=ExtractFileName(archivo);
       AnsiString archivoBitmapTH="";
       for(int z=1;z<=archivoX.Length()-4;z++)
@@ -259,6 +269,7 @@ void TfrmReport::CalculateAreaOfPictureClassic(double threshold,int kindOpen,Ans
   SetCurrentDir("c:\\");
   int iReg=0;
   AnsiString archivoOrig,archivoBitmapTH,archivoBMP;
+  int contError=0;
   for(iReg=0;iReg<TotalArchivos;iReg++)
   {
 // se ubica el archivo en el sgLista
@@ -282,7 +293,11 @@ void TfrmReport::CalculateAreaOfPictureClassic(double threshold,int kindOpen,Ans
       TImage* img;
       img=NULL;
       img=new TImage(this);
+      lblWorking->Visible=true;
+      this->Refresh();
       proceso(archivoOrig,archivoBitmapTH,ArchivoResumen,0,picture->Width[iReg],0,picture->Height[iReg],iReg,threshold,img,kindOpen,rulepx,rulecm,plantDist,rowDist,plantxPic);
+      lblWorking->Visible=false;
+      this->Refresh();
       if(picture->SaveOutput)
       {
         img->Picture->SaveToFile(archivoBitmapTH);
@@ -303,11 +318,13 @@ void TfrmReport::CalculateAreaOfPictureClassic(double threshold,int kindOpen,Ans
     sgLista->Cells[3][iReg+2]=picture->Width[iReg];
     sgLista->Cells[4][iReg+2]=picture->Height[iReg];
     if(picture->TotalPixel[iReg]==0) sgLista->Cells[5][iReg+2]="0";
-    else sgLista->Cells[5][iReg+2]=FormatFloat("#,###",picture->TotalPixel[iReg]);
+    else sgLista->Cells[5][iReg+2]=FormatFloat("#.###E+00",picture->TotalPixel[iReg]);
+//    else sgLista->Cells[5][iReg+2]=FormatFloat("#,###",picture->TotalPixel[iReg]);
     if(picture->LAI[iReg]==0.0) sgLista->Cells[6][iReg+2]="0.00";
     else sgLista->Cells[6][iReg+2]=FormatFloat("#.##",picture->LAI[iReg]);
     if(picture->Area[iReg]==0.0) sgLista->Cells[7][iReg+2]="0.00";
     else sgLista->Cells[7][iReg+2]=FormatFloat("#.##",picture->Area[iReg]);
+    if(picture->LAI[iReg]>100.0) contError++;
     sgLista->Refresh();
 // guardar imagen thresholding
 //  Image1->Picture->SaveToFile(archivoBitmapTH);
@@ -325,6 +342,7 @@ void TfrmReport::CalculateAreaOfPictureClassic(double threshold,int kindOpen,Ans
     frmImage3->Visible=true;
     MostrarOutput(2);
   }
+  if(contError>0)lblError->Visible=true;
   msgFinal();
 }
 //---------------------------------------------------------------------------
@@ -407,7 +425,7 @@ void TfrmReport::proceso(AnsiString archivoOrig,AnsiString archivo,AnsiString Ar
   double lai=(area/(double(plantxPic)*plantDist*rowDist))*100.00;
   picture->TotalPixel[reg]=contPixel;
   picture->LAI[reg]=lai;
-  picture->Area[reg]=area*1000;
+  picture->Area[reg]=area;
   frmImage->Visible=true;
 }
 
@@ -452,6 +470,7 @@ int fila=sgLista->Row;
 if(numreg>0 && fila-FixedRow+1<=numreg && fila>=FixedRow)
 {
   BorrarFila(fila);
+  frmImage3->Visible=false;
   MostrarImagen(sgLista->Row);
 }
 }
@@ -499,3 +518,4 @@ void __fastcall TfrmReport::FormClose(TObject *Sender,
 delete frmImage3;
 }
 //---------------------------------------------------------------------------
+
